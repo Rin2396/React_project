@@ -5,16 +5,10 @@ const projectSlice = createSlice({
     name: 'project',
     initialState,
     reducers: {
-        setNews: (state, action) => {
-            state.mainNews = action.payload
-        },
-        setServices: (state, action) => {
-            state.services = action.payload
-        },
-        setUser: (state, action) => {
-            state.user = action.payload
-        }
+        setNews: (state, action) => { state.mainNews = action.payload },
+        setServices: (state, action) => { state.services = action.payload },
+        setUser: (state, action) => { state.user = action.payload }
     }
 })
 export const { setNews, setServices, setUser } = projectSlice.actions;
-export const store = configureStore({reducer: projectSlice.reducer});
+export const store = configureStore({ reducer: projectSlice.reducer });

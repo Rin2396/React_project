@@ -17,7 +17,7 @@ const App = function() {
   return (
     <Theme preset={presetGpnDefault}>
       <BrowserRouter>
-        <Suspense fallback={ <div style={{width:"100vw", display: 'flex', justifyContent: 'center', alignItems: 'center', height: '100vh' }}> <Loader size="m" /> </div> }>
+        <Suspense fallback={ <div style={{ width:"100vw", display: 'flex', justifyContent: 'center', alignItems: 'center', height: '100vh', }}><Loader size="m" /></div> }>
         <Routes>
           <Route path={AppRoute.main} element={<MainLayout />}>
             <Route index element={<Homepage />}/>
@@ -26,7 +26,7 @@ const App = function() {
             <Route path={AppRoute.profile} element={<Profile />}/>
             <Route path='/service/:id' element={<Services />}/>
           </Route>
-          <Route path='*' element={ <div style={{width:"100vw", display: 'flex', justifyContent: 'center', alignItems: 'center', height: '100vh' }}> <Responses404 /> </div>}/> </Routes>
+          <Route path='*' element={ <div style={{width:"100vw", display: 'flex', justifyContent: 'center', alignItems: 'center', height: '100vh' }}> <Responses404 /></div> }/></Routes>
         </Suspense>
       </BrowserRouter>
     </Theme>

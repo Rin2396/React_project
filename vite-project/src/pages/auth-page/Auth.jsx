@@ -57,7 +57,7 @@ const Auth = () => {
         <div style={{ marginBottom: "16px" }}> <Informer status="alert" view="filled" title="Error" label={error} /> </div>
       )}
       <div style={{ display: "flex", width: "100%", justifyContent: "right" }}>
-        <button type="submit" style={{ backgroundColor: "white", border: "solid 2px black" }}> Вход </button>
+        <button type="submit" style={{ border: "solid 2px black" }}> Вход </button>
       </div>
     </form>
   );
