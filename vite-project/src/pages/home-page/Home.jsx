@@ -17,7 +17,7 @@ const Home = () => {
   }, []);
 
   return (
-    <Grid cols={3} gap="x1" style={{gap: "2rem" }}>
+    <Grid cols={1} gap="x1" style={{gap: "2rem" }}>
         {mainNews.map((publication) => (
         <Card
             key={publication.id}
