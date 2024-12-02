@@ -11,7 +11,8 @@ import { useSelector } from 'react-redux';
 const Header = () => {
     const {pathname} = useLocation()
     const navigate = useNavigate();
-    const user = useSelector(state => state.user);
+    const user = useSelector((state) => state.user);
+
     const handleLogout = () => {
         dropToken();
         navigate("/");
@@ -20,14 +21,18 @@ const Header = () => {
         <Layout  className={style.Header}>
             <Menu />
             <div className={style.rightBlock}>
-            <NavLink to='/profile'>
-                <Button view={pathname==="/profile" ? "primary" : "secondary"} label={`${user?.firstName} ${user?.lastName}` || 'Гость'}></Button>
-            </NavLink>
+                {getToken() ?
+                <NavLink to='/profile'>
+                    <Button view={pathname==="/profile" ? "primary" : "secondary"} label={`${user?.firstName} ${user?.lastName}`}></Button>
+                </NavLink> 
+                    : ''}
             <NavLink to='/login'>
-                {getToken() ? <Button view="secondary" onClick={handleLogout} label='Выход'></Button>
-                    : <Button view={pathname==="/login" ? "primary" : "secondary"} label='Вход'></Button>}
-            </NavLink></div>
+                {getToken() ? <Button view="secondary" onClick={handleLogout} label='Log out'></Button>
+                    : <Button view={pathname === "/login" ? "primary" : "secondary"} label='Sign in'></Button>}
+            </NavLink>  
+            </div>
         </Layout>
     )
 }
+
 export default Header;
